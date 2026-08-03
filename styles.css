@@ -1,0 +1,782 @@
+/**
+ * WeatherScope
+ * Estilos CSS personalizados
+ * 
+ * Características:
+ * - Variables CSS para temas
+ * - Responsive design
+ * - Modo oscuro/claro
+ * - Animaciones suaves
+ */
+
+/* ============================================================================ */
+/* VARIABLES CSS */
+/* ============================================================================ */
+
+:root {
+  /* Colores Tema Claro */
+  --bg: #f5f7fb;
+  --text: #0f172a;
+  --card: #ffffff;
+  --primary: #6366f1;
+  --primary-soft: rgba(99, 102, 241, 0.1);
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --muted: #64748b;
+  --success: #059669;
+  --success-soft: rgba(5, 150, 105, 0.12);
+  --danger: #dc2626;
+  --warning: #f59e0b;
+
+  /* Transiciones */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tema Oscuro */
+html[data-theme="dark"] {
+  --bg: #0b1220;
+  --text: #f8fafc;
+  --card: #111827;
+  --primary: #818cf8;
+  --primary-soft: rgba(129, 140, 248, 0.14);
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  --muted: #94a3b8;
+  --success: #10b981;
+  --success-soft: rgba(16, 185, 129, 0.12);
+}
+
+/* ============================================================================ */
+/* RESET Y ESTILOS GLOBALES */
+/* ============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ============================================================================ */
+/* TIPOGRAFÍA */
+/* ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* ============================================================================ */
+/* CARDS Y CONTENEDORES */
+/* ============================================================================ */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12);
+}
+
+/* ============================================================================ */
+/* FORMULARIOS */
+/* ============================================================================ */
+
+.form-control {
+  border-radius: 18px;
+  border: 2px solid var(--border);
+  padding: 14px 18px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
+}
+
+.form-control:focus {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+/* ============================================================================ */
+/* BOTONES */
+/* ============================================================================ */
+
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  color: white;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline-secondary {
+  border: 2px solid var(--border);
+  color: var(--muted);
+}
+
+.btn-outline-secondary:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-light {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-light:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline-warning {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.btn-outline-warning:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.btn-outline-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-outline-danger:hover {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+}
+
+.quick-city {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+/* ============================================================================ */
+/* ALERTAS */
+/* ============================================================================ */
+
+.alert {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-danger {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--danger);
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.alert-info {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* ============================================================================ */
+/* SPINNER */
+/* ============================================================================ */
+
+.spinner-border {
+  width: 50px;
+  height: 50px;
+  border-width: 4px;
+}
+
+/* ============================================================================ */
+/* TARJETA DE CLIMA */
+/* ============================================================================ */
+
+.weather-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  transition: var(--transition);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather-card:hover {
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Temperatura Principal */
+.temp {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.weather-icon {
+  font-size: 3.5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Condición */
+.condition {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* Métricas */
+.metric {
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.metric:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ============================================================================ */
+/* PRONÓSTICO */
+/* ============================================================================ */
+
+.forecast-day {
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 12px;
+  text-align: center;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.forecast-day:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1);
+}
+
+.forecast-icon {
+  font-size: 2rem;
+  margin: 8px 0;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.forecast-temp {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.forecast-min {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* ============================================================================ */
+/* LISTA DE ITEMS */
+/* ============================================================================ */
+
+.list-item {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  transition: var(--transition);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.list-item:hover {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  transform: translateX(4px);
+}
+
+.list-item:active {
+  transform: translateX(2px);
+}
+
+/* ============================================================================ */
+/* EMPTY STATE */
+/* ============================================================================ */
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 0.95rem;
+}
+
+/* ============================================================================ */
+/* BADGES */
+/* ============================================================================ */
+
+.cache-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--success-soft);
+  color: var(--success);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.cache-badge[style*="danger"] {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--danger);
+}
+
+/* ============================================================================ */
+/* UTILIDADES */
+/* ============================================================================ */
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.gap-4 {
+  gap: 1.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.py-4 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+
+/* ============================================================================ */
+/* RESPONSIVE */
+/* ============================================================================ */
+
+@media (max-width: 992px) {
+  .temp {
+    font-size: 3.5rem;
+  }
+
+  .weather-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .temp {
+    font-size: 3rem;
+  }
+
+  .weather-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .metric {
+    padding: 12px;
+  }
+
+  .metric-value {
+    font-size: 1rem;
+  }
+
+  .forecast-day {
+    padding: 12px 8px;
+  }
+
+  .forecast-icon {
+    font-size: 1.5rem;
+  }
+
+  .forecast-temp {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .temp {
+    font-size: 2.5rem;
+  }
+
+  .weather-icon {
+    font-size: 2.5rem;
+  }
+
+  .weather-card {
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    border-radius: 16px;
+    padding: 16px !important;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .form-control {
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .metric {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .forecast-day {
+    padding: 10px 6px;
+    border-radius: 12px;
+  }
+
+  .col-6 {
+    flex: 0 0 calc(50% - 0.25rem);
+  }
+
+  .col-md-3 {
+    flex: 0 0 50%;
+  }
+
+  .col-md-4 {
+    flex: 0 0 50%;
+  }
+
+  .col-md-6 {
+    flex: 0 0 100%;
+  }
+
+  .row.g-3 > div {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .list-item {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .gap-2 {
+    gap: 0.25rem !important;
+  }
+
+  .gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  .quick-city {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* ============================================================================ */
+/* IMPRESIÓN */
+/* ============================================================================ */
+
+@media print {
+  .btn,
+  #themeToggle,
+  .form-control,
+  #loading,
+  #errorMessage,
+  #cacheInfo {
+    display: none !important;
+  }
+
+  .weather-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 2px solid #000;
+  }
+}

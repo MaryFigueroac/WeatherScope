@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weather App Pro - Aplicación moderna de clima en tiempo real">
+  <title>WeatherScope v2.0.0</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container py-4">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+      <h1 class="mb-0">🌤️ WeatherScope</h1>
+      <small class="subtitle">Información meteorológica en tiempo real con visualización comparativa y pronósticos de alta precisión.</small>
+    </div>
+
+    <button id="themeToggle" class="btn btn-outline-secondary" title="Cambiar tema">
+      🌙 Oscuro
+    </button>
+
+  </div>
+
+  <!-- BÚSQUEDA -->
+  <div class="card p-4 mb-4">
+
+    <div class="row g-3">
+
+      <div class="col-lg-9">
+        <input
+          id="cityInput"
+          class="form-control form-control-lg"
+          placeholder="Ej: Bogotá, Madrid, París, Nueva York..."
+          autocomplete="off"
+          aria-label="Ingresa nombre de ciudad"
+        >
+      </div>
+
+      <div class="col-lg-3 d-grid">
+        <button id="searchButton" class="btn btn-primary btn-lg">
+          🔍 Buscar
+        </button>
+      </div>
+
+    </div>
+
+    <!-- CIUDADES RÁPIDAS -->
+    <div class="mt-3 d-flex flex-wrap gap-2">
+      <button class="btn btn-light quick-city" data-city="Bogotá">Bogotá</button>
+      <button class="btn btn-light quick-city" data-city="Medellín">Medellín</button>
+      <button class="btn btn-light quick-city" data-city="Barranquilla">Barranquilla</button>
+      <button class="btn btn-light quick-city" data-city="Cartagena">Cartagena</button>
+      <button class="btn btn-light quick-city" data-city="Madrid">Madrid</button>
+      <button class="btn btn-light quick-city" data-city="Barcelona">Barcelona</button>
+      <button class="btn btn-light quick-city" data-city="París">París</button>
+      <button class="btn btn-light quick-city" data-city="Nueva York">Nueva York</button>
+    </div>
+
+    <small class="subtitle mt-3 d-block">
+      💡 Tip: Escribe varias ciudades separadas por comas para búsqueda múltiple
+    </small>
+
+  </div>
+
+  <!-- LOADING -->
+  <div id="loading" class="text-center mb-4 d-none">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    <p class="mt-2 text-muted">Consultando clima en tiempo real...</p>
+  </div>
+
+  <!-- ERRORES -->
+  <div id="errorMessage" class="alert alert-danger d-none" role="alert">
+    <strong>❌ Error:</strong> <span id="errorText"></span>
+  </div>
+
+  <!-- INFO CACHÉ -->
+  <div id="cacheInfo" class="alert alert-info d-none" role="alert">
+    <strong>⚡ Caché:</strong> <span id="cacheText"></span>
+  </div>
+
+  <!-- RESULTADOS CLIMA -->
+  <div id="weatherContainer"></div>
+
+  <!-- FAVORITOS E HISTORIAL -->
+  <div class="row mt-4">
+
+    <!-- FAVORITOS -->
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h5 class="mb-3">⭐ Ciudades Favoritas</h5>
+        <div id="favoritesList"></div>
+      </div>
+    </div>
+
+    <!-- HISTORIAL -->
+    <div class="col-md-6">
+      <div class="card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">🕘 Historial de Búsquedas</h5>
+          <button id="clearHistory" class="btn btn-sm btn-outline-danger" title="Limpiar historial">
+            🗑️ Borrar
+          </button>
+        </div>
+        <div id="historyList"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="text-center mt-5 mb-3 text-muted">
+    <small>
+      WeatherScope v2.0.0 | Datos de <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> | 
+      <a href="#" onclick="showCacheStats()">Ver caché</a>
+    </small>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
