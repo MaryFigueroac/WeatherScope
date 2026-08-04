@@ -1,4 +1,4 @@
-# 🌤️ Weather App Pro v2.0.0
+# 🌤️ WeatherScope v2.0.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)]()
