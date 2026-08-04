@@ -47,8 +47,8 @@ Aplicación moderna de clima en tiempo real con arquitectura avanzada: caché in
 ### 1. Clonar o Descargar
 ```bash
 # Opción 1: Clone del repositorio
-git clone https://github.com/tuusuario/weather-app-pro.git
-cd weather-app-pro
+git clone https://github.com/MaryFigueroac/WeatherScope.git
+cd WeatherScope 
 
 # Opción 2: Descargar ZIP
 # Descarga y extrae los archivos
