@@ -1,0 +1,54 @@
+# 🌤️ WeatherScope v2.0.0
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)]()
+[![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)]()
+
+Aplicación moderna de clima en tiempo real con arquitectura avanzada: caché inteligente, AbortController, fallback automático y logging completo.
+
+## ✨ Características Principales
+
+### 🔍 Búsqueda
+- ✅ **Búsqueda simple** - Ingresa una ciudad
+- ✅ **Búsqueda múltiple** - Separa ciudades con comas (ej: "Madrid, Barcelona, París")
+- ✅ **Ciudades rápidas** - Botones predefinidos para búsqueda rápida
+- ✅ **Historial** - Últimas 10 búsquedas guardadas automáticamente
+- ✅ **Favoritos** - Máximo 8 ciudades guardadas
+
+### 🌡️ Datos de Clima
+- ✅ **Clima actual** - Temperatura, sensación térmica, humedad, viento, etc.
+- ✅ **7 días pronóstico** - Temperaturas máx/mín, probabilidad de lluvia
+- ✅ **Múltiples unidades** - Celsius y Fahrenheit
+- ✅ **Precisión** - Coordenadas exactas de la ciudad
+
+### ⚡ Rendimiento
+- ✅ **Caché inteligente** - 30 segundos en memoria (Map)
+- ✅ **AbortController** - Timeout automático de 10 segundos
+- ✅ **Fallback** - Usa caché expirado si API falla
+- ✅ **Recuperación** - Manejo robusto de errores de red
+- ✅ **Logging** - Sistema de debugging integrado
+
+### 🎨 Diseño
+- ✅ **Tema oscuro/claro** - Toggle con preferencias guardadas
+- ✅ **Responsive** - Optimizado para móvil, tablet y desktop
+- ✅ **Bootstrap 5** - Framework CSS profesional
+- ✅ **Animaciones** - Transiciones suaves y atractivas
+- ✅ **Accesibilidad** - HTML semántico y aria labels
+
+### 🛠️ Técnico
+- ✅ **Vanilla JS** - Sin dependencias de frameworks
+- ✅ **LocalStorage** - Persistencia de datos
+- ✅ **Open-Meteo API** - Datos meteorológicos precisos y gratuitos
+- ✅ **JSDoc** - Documentación integrada en el código
+- ✅ **Sin librerias** - Máximo rendimiento
+
+## 🚀 Inicio Rápido
+
+### 1. Clonar o Descargar
+```bash
+# Opción 1: Clone del repositorio
+git clone https://github.com/MaryFigueroac/WeatherScope.git
+cd WeatherScope
+
+# Opción 2: Descargar ZIP
+# Descarga y extrae los archivos
